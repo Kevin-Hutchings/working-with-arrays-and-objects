@@ -42,7 +42,7 @@
 function showValues(obj){
   let string = ''
   for(let key in obj){
-    string += obj[key] + ' '
+    string += obj[key] + ''
   }
   return string
 }
@@ -96,11 +96,11 @@ const double = (obj) => {
 */
 
 //Code Here
-const secrets = (obj) => {
+function secrets(obj){
   let empty = ''
   for(let key in obj){
-    if (obj[key].startsWith('sh')){
-      empty += obj[key] + ' '
+    if (key.startsWith('sh')){
+      empty += obj[key] + ''
     }
   }
   return empty
@@ -176,7 +176,7 @@ for(let key in deleteTheBigNumbers){
 //Code Here
 const startsWithK = obj =>{
   for(let key in obj){
-    if (obj[key].startsWith(k)){
+    if (key.startsWith('k')){
       delete obj[key]
     }
   }
@@ -196,5 +196,12 @@ const startsWithK = obj =>{
 */
 
 //Code Here
-
+const hiddenTreasure = obj => {
+  for(let key in obj){
+    if(!(Object.values(obj).includes('treasure'))){ 
+      delete obj[key]
+    }
+  }
+  return obj
+}
 
