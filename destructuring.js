@@ -61,7 +61,12 @@ const statePopulation = {
   arizona: 4
 }
 
-const totalPopulation = ({utah, california, texas, arizona}) => utah + california + texas + arizona;
+const totalPopulation = (obj) => {
+  const {utah, california, texas, arizona} = obj;
+  return utah + california + texas + arizona
+}
+
+totalPopulation(statePopulation)
 
 
 ////////// PROBLEM 4 //////////
@@ -81,6 +86,7 @@ const ingredientsList ={
 
 const ingredients = ({carb, fat, protein}) => [`${fat}`, `${protein}`, `${carb}`];
 
+ingredients(ingredientsList)
 
 ////////// PROBLEM 5 //////////
 
@@ -99,24 +105,14 @@ const ingredients = ({carb, fat, protein}) => [`${fat}`, `${protein}`, `${carb}`
 //Code Here
 
 let numbers ={
-  one: 1,
-  two: 2,
-  three: 3
+  first: 1,
+  second: 2,
+  third: 3
 }
 
-// const largeNumbers = ({first, second, third}) => 
+const largeNumbers = ({first, second, third}) => Math.min(first, second, third)
 
-// const numbers = {
-//   first: 1,
-//   second: 2,
-//   third 3
-// }
-// const {first, second, third} = numbers;
-
-// function largeNumbers(obj){
-//   obj.
-//   }
-// }
+largeNumbers(numbers)
 
 
 ////////// PROBLEM 6 //////////
@@ -128,5 +124,23 @@ let numbers ={
 */
 
 //Code Here
+let letters ={
+  a: [1],
+  b: [1,2],
+  c: [1,2,3]
+}
+
+function numberGroups({a, b, c}) {
+  const longestArrLength = Math.max(a.length, b.length, c.length)
+  let longest = []
+  if (longestArrLength === a.length) {
+    longest = a
+  } else if (longestArrLength === b.length) {
+    longest = b
+  } else {
+    longest = c
+  }
+  return longest;
+}
 
 
