@@ -54,18 +54,14 @@ function greeting( obj ) {
 */
 
 //Code Here
-const statePopulation ={
+const statePopulation = {
   utah: 1,
   california: 2,
   texas: 3,
   arizona: 4
 }
-const {utah, california, texas, arizona} = statePopulation;
 
-function totalPopulation(obj){
-  sum 
-}
-
+const totalPopulation = ({utah, california, texas, arizona}) => utah + california + texas + arizona;
 
 
 ////////// PROBLEM 4 //////////
@@ -77,7 +73,13 @@ function totalPopulation(obj){
   Use object destructuring to save the property values to new variables. 
   Push these new variables to an array and return the array. 
 */
+const ingredientsList ={
+  carb: 'flour',
+  fat: 'butter',
+  protein: 'eggs'
+}
 
+const ingredients = ({carb, fat, protein}) => [`${fat}`, `${protein}`, `${carb}`];
 
 
 ////////// PROBLEM 5 //////////
@@ -95,6 +97,14 @@ function totalPopulation(obj){
 */
 
 //Code Here
+
+let numbers ={
+  one: 1,
+  two: 2,
+  three: 3
+}
+
+// const largeNumbers = ({first, second, third}) => 
 
 // const numbers = {
 //   first: 1,
