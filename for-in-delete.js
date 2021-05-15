@@ -198,7 +198,7 @@ const startsWithK = obj =>{
 //Code Here
 const hiddenTreasure = obj => {
   for(let key in obj){
-    if(!(Object.values(obj).includes('treasure'))){ 
+    if(!(obj[key].includes('treasure'))){ 
       delete obj[key]
     }
   }
