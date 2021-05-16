@@ -159,16 +159,10 @@ var myCar = {
 */
 
 //Code Here
-const recordCleaner = (obj) => {
-  for(let i=0; i < obj.accidents.length; i++){
-    // console.log(obj.accidents[i].date)
-    if(obj.accidents[i].atFaultForAccident){
-      obj.accidents[i].atFaultForAccident = false
-    }
-  }
-  return obj
+const recordCleaner = () => {myCar.accidents.forEach(el => {el.atFaultForAccident = false}) 
+  return myCar
 }
-recordCleaner(myCar);
+// console.log(recordCleaner(myCar))
 
 
 ////////// PROBLEM 5 //////////
@@ -187,17 +181,18 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-const looper = arr => {
-  for(let i=0; i < arr.length; i++){
-    for (let j=0; j <= arr.length; j++){
-      if (arr[i][j] % 2 === 0){
-        arr[i][j] = 'even'
+const looper = () => {
+  for(let i=0; i < numsArr.length; i++){
+    for (let j=0; j <= numsArr.length+1; j++){
+      if (numsArr[i][j] % 2 === 0){
+        numsArr[i][j] = 'even'
       } else {
-        arr[i][j] = 'odd'
+        numsArr[i][j] = 'odd'
       }
     }
   }
-  return arr
+  return numsArr
 }
+
 
 
